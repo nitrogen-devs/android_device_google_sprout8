@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright 2016 Nitrogen Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +14,32 @@
 # limitations under the License.
 #
 
+# Sample: This is where we'd set a backup provider if we had one
+# $(call inherit-product, device/sample/products/backup_overlay.mk)
+
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    LiveWallpapersPicker
+
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+PRODUCT_NAME := full_sprout4
+PRODUCT_DEVICE := sprout4
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Android One (Sprout 4)
+PRODUCT_MANUFACTURER := Google
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-# common sprout
-$(call inherit-product, device/google/sprout-common/sprout.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/root/init.sprout.rc:root/init.sprout.rc \
     $(LOCAL_PATH)/rootdir/root/fstab.sprout:root/fstab.sprout
+
+# Common sprout
+$(call inherit-product, device/google/sprout-common/sprout.mk)
+
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product-if-exists, vendor/google/sprout4/sprout4-vendor.mk)

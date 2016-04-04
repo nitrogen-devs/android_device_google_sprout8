@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
-add_lunch_combo nitrogen_sprout4-user
-add_lunch_combo nitrogen_sprout4-userdebug
-add_lunch_combo nitrogen_sprout4-eng
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/aosp_sprout4.mk \
+    $(LOCAL_DIR)/nitrogen_sprout4.mk \
+    $(LOCAL_DIR)/full_sprout4.mk

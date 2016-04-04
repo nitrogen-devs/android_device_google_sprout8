@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+$(call inherit-product, device/google/sprout4/full_sprout4.mk)
 
-add_lunch_combo nitrogen_sprout4-user
-add_lunch_combo nitrogen_sprout4-userdebug
-add_lunch_combo nitrogen_sprout4-eng
+PRODUCT_NAME := aosp_sprout4
