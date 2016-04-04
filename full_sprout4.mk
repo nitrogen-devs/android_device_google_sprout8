@@ -28,7 +28,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 PRODUCT_NAME := full_sprout4
 PRODUCT_DEVICE := sprout4
 PRODUCT_BRAND := Google
-PRODUCT_MODEL := Android One (Sprout 4)
+PRODUCT_MODEL := Sprout 4
 PRODUCT_MANUFACTURER := Google
 
 # Overlays
@@ -40,8 +40,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/root/fstab.sprout:root/fstab.sprout \
     $(LOCAL_PATH)/rootdir/system/etc/audio_effects.conf:system/etc/audio_effects.conf
 
-# Common sprout
-$(call inherit-product, device/google/sprout-common/sprout.mk)
-
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product-if-exists, vendor/google/sprout4/sprout4-vendor.mk)
+$(call inherit-product, device/google/sprout4/device.mk)
+
+# Call the proprietary setup
+$(call inherit-product, vendor/google/sprout/sprout-vendor.mk)

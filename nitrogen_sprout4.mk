@@ -31,7 +31,7 @@ $(call inherit-product, device/google/sprout4/full_sprout4.mk)
 PRODUCT_DEVICE := sprout4
 PRODUCT_NAME := nitrogen_sprout4
 PRODUCT_BRAND := Google
-PRODUCT_MODEL := Android One (Sprout 4)
+PRODUCT_MODEL := Sprout 4
 PRODUCT_MANUFACTURER := Google
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
