@@ -45,7 +45,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 ART_USE_OPTIMIZING_COMPILER := true
 
 # kernel stuff
-TARGET_KERNEL_SOURCE := kernel/mediatek/sprout
+TARGET_KERNEL_SOURCE := kernel/google/sprout
 TARGET_KERNEL_CONFIG := sprout_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x00000100
