@@ -32,11 +32,13 @@ PRODUCT_MODEL := Android One (Sprout 4)
 PRODUCT_MANUFACTURER := Google
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/root/init.sprout.rc:root/init.sprout.rc \
-    $(LOCAL_PATH)/rootdir/root/fstab.sprout:root/fstab.sprout
+    $(LOCAL_PATH)/rootdir/root/fstab.sprout:root/fstab.sprout \
+    $(LOCAL_PATH)/rootdir/system/etc/audio_effects.conf:system/etc/audio_effects.conf
 
 # Common sprout
 $(call inherit-product, device/google/sprout-common/sprout.mk)
