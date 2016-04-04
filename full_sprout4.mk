@@ -31,15 +31,6 @@ PRODUCT_BRAND := Google
 PRODUCT_MODEL := Sprout 4
 PRODUCT_MANUFACTURER := Google
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/root/init.sprout.rc:root/init.sprout.rc \
-    $(LOCAL_PATH)/rootdir/root/fstab.sprout:root/fstab.sprout \
-    $(LOCAL_PATH)/rootdir/system/etc/audio_effects.conf:system/etc/audio_effects.conf
-
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/google/sprout4/device.mk)
 
